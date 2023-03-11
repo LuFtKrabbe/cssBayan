@@ -6,11 +6,7 @@
 
 html {
     font-family: 'Inter', sans-serif;
-    font-size: 10px;
-}
-
-body {
-    text-align: center;
+    font-size: 0.8em;
 }
 
 .accordeon-wrapper {
@@ -20,17 +16,30 @@ body {
     cursor: pointer;
 }
 
+.accordeon-wrapper:hover {
+    color: #851b1b;
+}
+
 .task-name {
-    text-align: left;
     line-height: 5.0rem;
     font-size: 3.0rem;
     font-weight: 700;
 }
 
 .section {
-    text-align: left;
-    border-top: solid 2px #5c5c5c;
+    border-top: solid 0.1em #5c5c5c;
     line-height: 4.0rem;
     font-size: 2.0rem;
     font-weight: 700;
+}
+
+label {
+    display: inline-block;
+    width: 90%;
+    margin-right: 0;
+}
+
+input {
+    display: inline-block;
+    width: 8%;
 }
