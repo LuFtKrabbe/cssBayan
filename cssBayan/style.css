@@ -2,22 +2,24 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: 0.3s all linear;
 }
 
 html {
     font-family: 'Inter', sans-serif;
     font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .accordeon-wrapper {
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 50%;
     cursor: pointer;
 }
 
 .accordeon-wrapper:hover {
-    color: #851b1b;
+    color: rgba(0, 0, 0);
 }
 
 .task-name {
@@ -27,19 +29,63 @@ html {
 }
 
 .section {
-    border-top: solid 0.1em #5c5c5c;
+    /*border-top: solid 0.1em #5c5c5c;*/
     line-height: 4.0rem;
     font-size: 2.0rem;
     font-weight: 700;
 }
 
+
+
+img {
+    height: 0;
+    margin: 0rem auto 0rem auto;
+}
+
 label {
-    display: inline-block;
-    width: 90%;
-    margin-right: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgba(27, 83, 16, 0.75);
+    border-radius: 0rem;
+}
+
+span {
+    margin: 0 0 0 2rem;
+}
+
+.content {
+    background-color: rgba(27, 83, 16, 0.25);
+    border-radius: 0rem;
+}
+
+.section label:nth-child(2):hover {
+    color: #ffffff;
+    background-color: rgb(92, 66, 10);
+}
+
+label:hover ~ label img {
+    height: 20rem;
+    border-radius: 1rem;
+    margin: 1rem auto 1rem auto;
 }
 
 input {
-    display: inline-block;
-    width: 8%;
+    display: none;
+    visibility: hidden;
+    margin-left: auto;
+}
+
+input:hover {
+    visibility: visible;
+}
+
+input:checked ~ label img {
+    height: 20rem;
+    border-radius: 1rem;
+    margin: 1rem auto 1rem auto;
+}
+
+#icon {
+    height: 2.0rem;
+    margin: 0rem 1rem 0rem auto;
 }
