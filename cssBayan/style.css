@@ -100,9 +100,8 @@ input {
 
 .section:hover .content img,
 input:checked ~ .content img {
-    height: 25rem;
-    border-radius: 1rem;
-    margin: 1rem auto 1rem auto;
+    height: 24rem;
+    margin: 0.5rem auto 0.5rem auto;
 }
 
 input:checked ~ .tab {
