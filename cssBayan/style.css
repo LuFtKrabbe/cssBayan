@@ -2,32 +2,41 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: 0.3s all linear;
 }
 
 html {
     font-family: 'Inter', sans-serif;
-    font-size: 0.8em;
-    color: rgb(70, 70, 70);
+    font-size: 0.8rem;
+    color: rgba(205, 155, 75, 0.7);
 }
 
-.accordeon-wrapper {
+
+/***ACCORDION***/
+
+
+.accordion-wrapper {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     cursor: pointer;
 }
 
-.accordeon-wrapper:hover {
-    color: rgba(0, 0, 0);
-}
-
-.task-name {
-    line-height: 5.0rem;
+.accordion-wrapper .task-name {
+    line-height: 6.0rem;
     font-size: 3.0rem;
     font-weight: 700;
-    color: rgba(0, 0, 0);
+    color: rgb(110, 40, 40);
+    margin: 0 0 0 2rem;
 }
+
+.accordion-wrapper:hover {
+    color: rgb(205, 155, 75);
+}
+
+.accordion-wrapper:hover .icon {
+    opacity: 1.0;
+}
+
 
 
 /***LABELS AND CONTENTS***/
@@ -37,18 +46,10 @@ span {
     margin: 0 0 0 2rem;
 }
 
-.section {
-    border-top: solid 0.5rem #383838;
-    border-bottom: solid 0.5rem #383838;
-    border-radius: 2.0rem;
-    line-height: 5.0rem;
-    font-size: 2.0rem;
-    font-weight: 700;
-}
-
 img {
     height: 0;
     margin: 0rem auto 0rem auto;
+    transition: 0.4s all linear;
 }
 
 label {
@@ -63,45 +64,30 @@ label {
     border-radius: 1.5rem;
 }
 
-.content:hover img {
-    height: 20rem;
-    margin: 1rem auto 1rem auto;
+.section {
+    border-top: solid 0.5rem #383838;
+    border-bottom: solid 0.5rem #383838;
+    border-radius: 2.0rem;
+    line-height: 5.0rem;
+    font-size: 2.0rem;
+    font-weight: 700;
 }
 
-.section:hover .icon {
-    transform: rotate(-90deg);
-}
-
-.section:active span {
-    color: #ffffff;
-}
-
-.section:active .tab {
-    background-color: rgb(115, 85, 15);
-}
-
-.section:active img {
-    opacity: 0.6;
-}
-
-.section label:nth-child(2):hover {
+.section:active .tab,
+.section:hover .tab {
     color: #ffffff;
     background-color: rgb(115, 85, 15);
 }
 
-label:hover ~ label img {
-    height: 20rem;
-    border-radius: 0.5rem;
-    margin: 1rem auto 1rem auto;
-}
-
-label:hover .icon {
-    transform: rotate(-90deg);
+.section:active .content img {
+    filter: brightness(60%);
 }
 
 .icon {
-    height: 2.0rem !important;
-    margin: 0rem 2rem 0rem auto !important;
+    height: 2.0rem;
+    margin: 0rem 2rem 0rem auto;
+    opacity: 0;
+    transition: 0.2s all linear;
 }
 
 
@@ -110,20 +96,21 @@ label:hover .icon {
 
 input {
     display: none;
-    margin-left: auto;
 }
 
-input:checked ~ label img {
-    height: 20rem;
+.section:hover .content img,
+input:checked ~ .content img {
+    height: 25rem;
     border-radius: 1rem;
     margin: 1rem auto 1rem auto;
-}
-
-input:checked ~ label .icon {
-    transform: rotate(-90deg);
 }
 
 input:checked ~ .tab {
     background-color: rgb(115, 85, 15);
     color: rgb(255, 255, 255);
+}
+
+.section:hover .icon,
+input:checked ~ .tab .icon {
+    transform: rotate(-90deg);
 }
